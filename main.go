@@ -1,10 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func main() {
 
-	// 16 example student names
+	// A slice of strings containing the names of the students.
 	names := []string{
 		"Alex Ryan",
 		"Fernando Valdez",
@@ -23,19 +26,27 @@ func main() {
 		"Locke Lamora",
 	}
 
-
-		
-
 	numberOfPods := 4
 
-	// will create a 2-dimensional slice of strings with the number of pods. Students will be divided into pods.
+	// Initialize a slice of slices of strings to represent the pods.
 	pods := make([][]string, numberOfPods)
+
+	// Will make a new slice with the names of the students in mixed order.
+	randomOrderNames := make([]string, len(names))
+
+	// Copy the names into the randomOrderNames slice.
+	copy(randomOrderNames, names)
+
+	// Use the rand.Shuffle function to randomize the order of the names.
+	rand.Shuffle(len(randomOrderNames), func(i, j int) {
+		randomOrderNames[i], randomOrderNames[j] = randomOrderNames[j], randomOrderNames[i]
+	})
 
 	// will print number of students
 	fmt.Printf("Number of students: %d\n", len(names))
 
-	// will iterate over the names slice and assign each name to a pod.
-	for i, name := range names {
+	// will iterate over the names slice and assign each name to a pod randomly. until all names are assigned.
+	for i, name := range randomOrderNames {
 		pod := i % numberOfPods
 		pods[pod] = append(pods[pod], name)
 	}
