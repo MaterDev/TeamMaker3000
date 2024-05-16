@@ -3,20 +3,28 @@ package main
 import "fmt"
 
 func main() {
+
+	// 16 example student names
 	names := []string{
-		"Ani Subbarao",
-		"Brock Biever",
-		"Crystal EvenRam (Remote)",
-		"Joshua Bass  (Remote)",
-		"Justin Kahn (Remote)",
-		"Kalia Vang",
-		"Luke Edwards",
-		"Michael Lafond",
-		"Sam Shacter",
-		"Sumeiya Abdi (Remote)",
-		"Tierra Byrd",
-		"Tristan Bridges",
-		}
+		"Alex Ryan",
+		"Fernando Valdez",
+		"Javier Rice",
+		"Quique Jefferson",
+		"Nija Desirae",
+		"Chava Rosenwort",
+		"Salaam Muhammad",
+		"Braeden Kincade",
+		"Peng Zhang",
+		"Axe Rivera",
+		"Zander Ofosu",
+		"Nicolas Sosa",
+		"Wendy Daye",
+		"TacoCat Dogod",
+		"Locke Lamora",
+	}
+
+
+		
 
 	numberOfPods := 4
 
