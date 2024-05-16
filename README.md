@@ -29,7 +29,7 @@ your_project_name/
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/teammaker3000.git
+   git clone https://github.com/materdev/teammaker3000.git
    cd teammaker3000
    ```
 
