@@ -5,8 +5,38 @@ import (
 	"math/rand"
 )
 
-func main() {
+// Student interface with required attributes
+type Student interface {
+	GetName() string
+	IsRemote() bool
+	GetPod() int
+	SetPod(int)
+}
 
+// student struct implementing the Student interface
+type student struct {
+	name     string
+	isRemote bool
+	pod      int
+}
+
+func (s *student) GetName() string {
+	return s.name
+}
+
+func (s *student) IsRemote() bool {
+	return s.isRemote
+}
+
+func (s *student) GetPod() int {
+	return s.pod
+}
+
+func (s *student) SetPod(pod int) {
+	s.pod = pod
+}
+
+func main() {
 	// A slice of strings containing the names of the students.
 	names := []string{
 		"Alex Ryan",
@@ -28,22 +58,26 @@ func main() {
 
 	numberOfPods := 4
 
+	// Create students from names
+	students := make([]Student, len(names))
+	for i, name := range names {
+		students[i] = &student{name: name}
+	}
+
+	// Assign pods to students
+	createPods(students, numberOfPods)
+
 	// Initialize a slice of slices of strings to represent the pods.
 	pods := make([][]string, numberOfPods)
 
-	// Will make a new slice to store the names of the students in a random order.
-	// Copy the names into the randomOrderNames slice.
-	// Use the rand.Shuffle function to randomize the order of the names.
-	teams := createPods(names)
+	// Fill pods with students
+	for _, student := range students {
+		pod := student.GetPod()
+		pods[pod] = append(pods[pod], student.GetName())
+	}
 
 	// Will print number of students
-	fmt.Printf("Number of students: %d\n", len(names))
-
-	// Will print number of pods by iterating over the pods slice and printing out the pod number and the students in that pod.
-	for i, name := range teams {
-		pod := i % numberOfPods
-		pods[pod] = append(pods[pod], name)
-	}
+	fmt.Printf("Number of students: %d\n", len(students))
 
 	// Will iterate over the pods slice and print out the pod number and the students in that pod.
 	for i, pod := range pods {
@@ -54,14 +88,14 @@ func main() {
 	}
 }
 
-// Take a slice of strings and return a new slice of strings with the same elements in a random order.
-func createPods(names []string) []string {
-	randomOrderNames := make([]string, len(names))
-
-	copy(randomOrderNames, names)
-
-	rand.Shuffle(len(randomOrderNames), func(i, j int) {
-		randomOrderNames[i], randomOrderNames[j] = randomOrderNames[j], randomOrderNames[i]
+// Take a slice of students and assign them to pods in a random order.
+func createPods(students []Student, numberOfPods int) {
+	rand.Shuffle(len(students), func(i, j int) {
+		students[i], students[j] = students[j], students[i]
 	})
-	return randomOrderNames
+
+	for i, student := range students {
+		pod := i % numberOfPods
+		student.SetPod(pod)
+	}
 }
