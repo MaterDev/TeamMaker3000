@@ -3,64 +3,16 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"teammaker3000/data" // Replace with the actual path to the data package
 )
 
-// Student interface with required attributes
-type Student interface {
-	GetName() string
-	IsRemote() bool
-	GetPod() int
-	SetPod(int)
-}
-
-// student struct implementing the Student interface
-type student struct {
-	name     string
-	isRemote bool
-	pod      int
-}
-
-func (s *student) GetName() string {
-	return s.name
-}
-
-func (s *student) IsRemote() bool {
-	return s.isRemote
-}
-
-func (s *student) GetPod() int {
-	return s.pod
-}
-
-func (s *student) SetPod(pod int) {
-	s.pod = pod
-}
-
 func main() {
-	// A slice of strings containing the names of the students.
-	names := []string{
-		"Alex Ryan",
-		"Fernando Valdez",
-		"Javier Rice",
-		"Quique Jefferson",
-		"Nija Desirae",
-		"Chava Rosenwort",
-		"Salaam Muhammad",
-		"Braeden Kincade",
-		"Peng Zhang",
-		"Axe Rivera",
-		"Zander Ofosu",
-		"Nicolas Sosa",
-		"Wendy Daye",
-		"TacoCat Dogod",
-		"Locke Lamora",
-	}
-
+	nameData := data.Names
 	numberOfPods := 4
 
 	// Create students from names
-	students := make([]Student, len(names))
-	for i, name := range names {
+	students := make([]Student, len(nameData))
+	for i, name := range nameData {
 		students[i] = &student{name: name}
 	}
 
@@ -76,10 +28,10 @@ func main() {
 		pods[pod] = append(pods[pod], student.GetName())
 	}
 
-	// Will print number of students
+	// Print number of students
 	fmt.Printf("Number of students: %d\n", len(students))
 
-	// Will iterate over the pods slice and print out the pod number and the students in that pod.
+	// Iterate over the pods slice and print out the pod number and the students in that pod.
 	for i, pod := range pods {
 		fmt.Printf("Pod %d:\n", i+1)
 		for _, name := range pod {
