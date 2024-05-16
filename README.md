@@ -2,6 +2,8 @@
 
 Team Maker 3000 is a Go application that randomly assigns students to different pods. This application is useful for organizing students into groups (or pods) for projects, discussions, or activities.
 
+![Team Maker 3000](./coverImage.png)
+
 ## Project Structure
 
 ```
