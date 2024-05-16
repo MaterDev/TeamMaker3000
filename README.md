@@ -67,6 +67,12 @@ The application performs the following tasks:
 
 ### Example Output
 
+![Example Output](./exampleOutput.png)
+
+<!-- Hideable code block -->
+<details>
+<summary>Click to expand the example output text</summary>
+
 ```sh
 Number of students: 15
 Pod 1:
@@ -89,6 +95,8 @@ Pod 4:
     TacoCat Dogod
     Locke Lamora
 ```
+</details>
+
 
 ## License
 
