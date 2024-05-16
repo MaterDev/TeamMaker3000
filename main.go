@@ -3,23 +3,6 @@ package main
 import "fmt"
 
 func main() {
-
-	/**
-	Ani Subbarao
-	Brock Biever
-	Crystal EvenRam (Remote)
-	Joshua Bass  (Remote)
-	Justin Kahn (Remote)
-	Kalia Vang
-	Luke Edwards
-	Meleah Roe
-	Michael Lafond
-	Sam Shacter
-	Sumeiya Abdi (Remote)
-	Tierra Byrd
-	Tristan Bridges
-	 */
-	// An array of names, which will be student names.
 	names := []string{
 		"Ani Subbarao",
 		"Brock Biever",
