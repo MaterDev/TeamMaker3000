@@ -7,7 +7,7 @@ Team Maker 3000 is a Go application that randomly assigns students to different 
 ## Project Structure
 
 ```
-your_project_name/
+Team_Maker-3000/
 ├── dataReal/
 │   └── dataReal.go
 ├── main.go
