@@ -1,5 +1,5 @@
 Mater Development General Use License (MDGUL)
-Version 1.0
+Version 1.1
 
 Copyright (c) 2023 Mater Development
 
@@ -15,11 +15,11 @@ Subject to the terms of this License, Licensor grants Licensee a non-exclusive, 
 
 3. Restrictions
 
-a. Modification and Derivative Works: Licensee shall not modify, adapt, or create derivative works of the Software.
+a. Modification and Derivative Works: Licensee may modify the Software for personal use only. Creation of derivative works for redistribution is prohibited without express written permission from Licensor. Personal use includes use that is not for profit, commercial gain, or intended for distribution.
 
-b. Redistribution: Licensee shall not distribute, sublicense, or transfer the Software to any third party.
+b. Redistribution: Licensee shall not distribute, sublicense, or transfer the Software to any third party without express written permission from Licensor.
 
-c. Commercial Use: Licensee shall not use the Software for commercial purposes, including selling, licensing, or monetizing the Software, without express written permission from Licensor.
+c. Commercial Use: Licensee shall not use the Software for commercial purposes, including but not limited to selling, licensing, or monetizing the Software, without express written permission from Licensor. Commercial use includes any activity that generates revenue or is intended for commercial advantage or monetary compensation.
 
 4. Attribution and Links
 
@@ -35,13 +35,17 @@ In no event shall Licensor be liable for any claim, damages, or other liability,
 
 7. Termination
 
-This License shall automatically terminate if Licensee breaches any of its terms and conditions.
+This License shall automatically terminate if Licensee breaches any of its terms and conditions. Upon termination, Licensee must cease all use and destroy all copies of the Software. Termination does not affect any rights or obligations that arose prior to termination.
 
 8. General
 
-This License shall be governed by the laws of the jurisdiction in which Licensor is located. Any disputes related to this License shall be subject to the exclusive jurisdiction of the courts in that jurisdiction.
+This License shall be governed by the laws of the jurisdiction in which Licensor is located. Any disputes related to this License shall be subject to the exclusive jurisdiction of the courts in that jurisdiction. Licensor may, at its sole discretion, elect to resolve disputes through mediation or arbitration.
 
-9. Acknowledgement
+9. Contributions
+
+If Licensee submits any contributions to the Software, Licensee agrees that such contributions are provided on a voluntary basis and Licensor is granted a perpetual, irrevocable, royalty-free, and worldwide license to use, reproduce, modify, display, distribute, and sublicense the contributions as part of the Software.
+
+10. Acknowledgement
 
 Licensee acknowledges that they have read this License, understand it, and agree to be bound by its terms and conditions.
 
