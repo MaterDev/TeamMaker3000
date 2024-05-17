@@ -4,21 +4,6 @@ Team Maker 3000 is a Go application that randomly assigns students to different 
 
 ![Team Maker 3000](./coverImage.png)
 
-## Project Structure
-
-```
-Team_Maker-3000/
-├── dataReal/
-│   └── dataReal.go
-├── main.go
-├── student.go
-└── go.mod
-```
-
-- **dataReal/dataReal.go**: Contains the list of student names.
-- **main.go**: The main entry point of the application.
-- **student.go**: Defines the `Student` interface and the `student` struct.
-
 ## Getting Started
 
 ### Prerequisites
