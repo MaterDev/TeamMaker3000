@@ -39,7 +39,7 @@ go run .
 The application performs the following tasks:
 
 1. **Read Student Names**:
-   - The application reads a list of student names from the `dataReal` package.
+   - The application reads a list of student names from the `data` package.
 
 2. **Create Students**:
    - It creates student instances from the list of names.
