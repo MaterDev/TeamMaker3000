@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"teammaker3000/data" // Replace with the actual path to the data package
+	"teammaker3000/dataReal" // Replace with the actual path to the data package
 )
 
 func main() {
-	nameData := data.Names
+	nameData := dataReal.Names
 	numberOfPods := 4
 
 	// Create students from names
