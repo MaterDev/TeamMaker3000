@@ -9,7 +9,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-	"teammaker3000/dataReal" // Replace with the actual path to the data package
+	"teammaker3000/data" // Replace with the actual path to the data package
 
 	_ "github.com/lib/pq" // Import the pq package
 )
@@ -51,7 +51,7 @@ func main() {
 	}
 	defer db.Close()
 
-	nameData := dataReal.Names
+	nameData := data.Names
 	teamSize := getTeamSize(len(nameData))
 
 	var pods [][]string
