@@ -98,32 +98,33 @@ The application performs the following tasks:
 <summary>Click to expand the example output text</summary>
 
 ```sh
+(base) % go run .
+Enter desired team size: 3
 Number of students: 15
 Pod 1:
-    Alex Ryan
-    Quique Jefferson
-    Salaam Muhammad
-    Axe Rivera
+        Alex Ryan
+        Fernando Valdez
+        Javier Rice
 Pod 2:
-    Fernando Valdez
-    Nija Desirae
-    Braeden Kincade
-    Zander Ofosu
+        Quique Jefferson
+        Nija Desirae
+        Chava Rosenwort
 Pod 3:
-    Javier Rice
-    Chava Rosenwort
-    Peng Zhang
-    Wendy Daye
+        Salaam Muhammad
+        Braeden Kincade
+        Peng Zhang
 Pod 4:
-    Nicolas Sosa
-    TacoCat Dogod
-    Locke Lamora
+        Axe Rivera
+        Zander Ofosu
+        Nicolas Sosa
+Pod 5:
+        Wendy Daye
+        TacoCat Dogod
+        Locke Lamora
+Enter 'A' to accept or 'X' to exit without saving: X
 ```
 </details>
 
 ## License
 
 This project is licensed under the MDGUL License - see the [LICENSE](LICENSE) file for details.
-```
-
-This README includes instructions to set up the PostgreSQL database, run the application, and details about the application's functionality.
