@@ -1,8 +1,17 @@
 # Team Maker 3000
 
-Team Maker 3000 is a Go application that assigns students to different pods based on user-defined team sizes. This application is useful for organizing students into groups (or pods) for projects, discussions, or activities, while also ensuring minimal repeat collaborations.
+Team Maker 3000 is a Go application that assigns students to different pods based on user-defined minimum and target team sizes. This application is useful for organizing students into groups (or pods) for projects, discussions, or activities, while also ensuring minimal repeat collaborations and maintaining balanced group sizes.
 
 ![Team Maker 3000](./coverImage.png)
+
+## Features
+
+- **Minimum and Target Team Sizes**: Users can specify both a minimum and target team size, providing flexibility in group formation.
+- **Smart Redistribution**: Ensures all teams meet the minimum size requirement, even if it means exceeding the target size for some groups.
+- **Collaboration History**: Uses past collaboration data to minimize repeat pairings.
+- **Transparent Process**: Provides clear feedback when redistributions occur.
+- **Database Integration**: Stores and retrieves collaboration data for long-term tracking.
+- **Concurrent Processing**: Optimized for performance with larger datasets.
 
 ## Getting Started
 
@@ -66,9 +75,17 @@ go run .
 
 ### Using the Application
 
-1. **Enter Team Size**: When prompted, enter the desired team size. The application will ensure no team has only one person.
-2. **Review Teams**: The application will display the generated teams.
-3. **Confirm Teams**: You can either accept the teams, reroll to generate new teams, or exit without saving.
+1. **Enter Team Sizes**: 
+   - When prompted, enter the minimum team size.
+   - Then, enter the target team size (must be equal to or greater than the minimum).
+
+2. **Review Teams**: 
+   - The application will display the generated teams.
+   - If redistributions occurred to meet the minimum size requirement, a message will explain the changes.
+
+3. **Confirm Teams**: 
+   - Enter 'A' to accept the teams and save to the database.
+   - Enter 'X' to exit without saving.
 
 ### Application Details
 
@@ -80,50 +97,61 @@ The application performs the following tasks:
 2. **Create Students**:
    - It creates student instances from the list of names.
 
-3. **Assign Pods**:
-   - The application assigns students to pods based on the desired team size, ensuring minimal repeat collaborations.
+3. **Fetch Collaboration History**:
+   - Retrieves past collaboration data from the database.
 
-4. **Display Pods**:
+4. **Assign Pods**:
+   - The application assigns students to pods based on the minimum and target team sizes, ensuring minimal repeat collaborations.
+
+5. **Redistribute if Necessary**:
+   - If any team is smaller than the minimum size, students are redistributed to meet this requirement.
+
+6. **Display Pods**:
    - It displays the number of students and lists the students in each pod.
+   - If redistribution occurred, it explains why and how many students were moved.
 
-5. **Save Collaborations**:
-   - Upon user confirmation, the application saves the collaboration data to the PostgreSQL database.
+7. **Save Collaborations**:
+   - Upon user confirmation, the application saves the new collaboration data to the PostgreSQL database.
 
 ### Example Output
 
-![Example Output](./exampleOutput.png)
-
-<!-- Hideable code block -->
-<details>
-<summary>Click to expand the example output text</summary>
-
 ```sh
-(base) % go run .
-Enter desired team size: 3
+Enter minimum team size: 3
+Enter target team size: 4
 Number of students: 15
-Pod 1:
+Pod 1 (4 members):
         Alex Ryan
         Fernando Valdez
         Javier Rice
-Pod 2:
         Quique Jefferson
+Pod 2 (4 members):
         Nija Desirae
         Chava Rosenwort
-Pod 3:
         Salaam Muhammad
         Braeden Kincade
+Pod 3 (4 members):
         Peng Zhang
-Pod 4:
         Axe Rivera
         Zander Ofosu
         Nicolas Sosa
-Pod 5:
+Pod 4 (3 members):
         Wendy Daye
         TacoCat Dogod
         Locke Lamora
-Enter 'A' to accept or 'X' to exit without saving: X
+The target team size of 4 was not possible for all teams. 3 student(s) from the smallest team have been redistributed to meet the minimum team size of 3.
+Enter 'A' to accept or 'X' to exit without saving: A
+Teams saved to database.
 ```
-</details>
+
+## Configuration
+
+You can modify the following constants in the `main.go` file to adjust the application's behavior:
+
+- `dbHost`: Database host (default: "localhost")
+- `dbPort`: Database port (default: 5432)
+- `dbName`: Database name (default: "teammaker3000")
+- `maxRetries`: Maximum number of database connection retries (default: 3)
+- `batchSize`: Number of database operations to perform in a single transaction (default: 1000)
 
 ## License
 
